@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Display</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
+
+        <script type="text/javascript">
+            let url = "http://127.0.0.1:5000/display/"
+            window.onload = setupRefresh;
+         
+            function setupRefresh() {
+              setTimeout("refreshPage();", 2000); // milliseconds
+            }
+            function refreshPage() {
+               let oldUrl = location.href
+               let newUrl = url + (parseInt(oldUrl.substr(30))+1)
+               
+               window.location = newUrl
+            }
+        </script>
+    </head>
+    <body>
+            <span class="message">Count: {{ count }}</span>
+    </body>
+</html>
