@@ -6,7 +6,6 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
 
         <script type="text/javascript">
-            let url = "http://127.0.0.1:5000/display/"
             window.onload = setupRefresh;
          
             function setupRefresh() {
@@ -14,7 +13,15 @@
             }
             function refreshPage() {
                let oldUrl = location.href
-               let newUrl = url + (parseInt(oldUrl.substr(30))+1)
+               let index = oldUrl.length-1
+
+               while(oldUrl.charAt(index) != "/") {
+                  index -= 1
+               }
+               
+               let number = parseInt(oldUrl.substr(index+1)) + 1
+
+               let newUrl = oldUrl.substring(0, index+1) + number
                
                window.location = newUrl
             }
