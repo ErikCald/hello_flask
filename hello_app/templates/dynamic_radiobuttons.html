@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h3> Select one of the following: </h3>
+    <!-- <script src="{{url_for('static', filename='create_radiobuttons.js')}}"></script> -->
+    <script type="text/javascript">
+        // Create a form dynamically
+        let form = document.createElement("form");
+        form.setAttribute("method", "post");
+        form.setAttribute("action", {{ url_for('dynamic_radiobuttons') }});
+
+        // Create an input element for emailID
+        var ID = document.createElement("input");
+        ID.setAttribute("type", "text");
+        ID.setAttribute("name", "emailID");
+        ID.setAttribute("placeholder", "E-Mail ID");
+
+        // // Create a break line element
+        // let br = document.createElement("br");
+
+        // let radiobuttons = {{ radiobutton_list|tojson }};
+        // let preselected = {{ preselected_radiobutton|tojson }};
+
+        // let grouping = "button_grouping_1";
+
+        // // for (let displayName of radiobuttons) {
+        // // Create an new radiobutton
+        // let radiobutton = document.createElement("radiobutton" + displayName);
+        // radiobutton.setAttribute("type", "radiobutton");
+        // radiobutton.setAttribute("id", displayName);
+        // radiobutton.setAttribute("value", displayName);
+        // radiobutton.setAttribute("name", grouping);
+
+        // // let label = document.createElement("label" + displayName);
+        // // radiobutton.setAttribute("type", "label")
+        // // radiobutton.htmlFor = displayName
+        
+        // form.appendChild(radiobutton)
+        // form.appendChild(br.cloneNode());
+        // // }
+
+        // create a submit button
+        let s = document.createElement("input");
+        s.setAttribute("type", "submit");
+        s.setAttribute("value", "Submit");
+
+        // Append the submit button to the form
+        // form.appendChild(s);
+
+        document.getElementsByTagName("body")[0].appendChild(form);
+        
+
+        
+        
+        
+     
+        // // Create an input element for Full Name
+        // let FN = document.createElement("input");
+        // FN.setAttribute("type", "text");
+        // FN.setAttribute("name", "FullName");
+        // FN.setAttribute("placeholder", "Full Name");
+     
+        // // create a submit button
+        // let s = document.createElement("input");
+        // s.setAttribute("type", "submit");
+        // s.setAttribute("value", "Submit");
+            
+        // // Append the full name input to the form
+        // form.appendChild(FN);
+            
+        // // Inserting a line break
+        // form.appendChild(br.cloneNode());
+            
+        // // Append the DOB to the form
+        // form.appendChild(DOB);
+        // form.appendChild(br.cloneNode());
+            
+        // // Append the emailID to the form
+        // form.appendChild(EID);
+        // form.appendChild(br.cloneNode());
+            
+        // // Append the Password to the form
+        // form.appendChild(PWD);
+        // form.appendChild(br.cloneNode());
+            
+        // // Append the ReEnterPassword to the form
+        // form.appendChild(RPWD);
+        // form.appendChild(br.cloneNode());
+            
+        // // Append the submit button to the form
+        // form.appendChild(s);
+
+        // document.getElementsByTagName("body")[0]
+        // .appendChild(form);
+                
+    </script>
+
+    <br>
+    <br>
+    <span class="message">{{ result }}</span>
+
+
+</body>
+</html>
